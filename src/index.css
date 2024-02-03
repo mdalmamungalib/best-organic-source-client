@@ -4,7 +4,19 @@
 
 .drawer-side a.active {
   color: rgb(255, 255, 255);
+};
+
+.phoneInput{
+  width: 350px;
 }
+.PhoneInputInput{
+  height: 40px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

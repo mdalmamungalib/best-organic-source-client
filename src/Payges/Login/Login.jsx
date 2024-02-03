@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import bgImg from "../../assets/reservation/wood-grain-pattern-gray1x.png"
+import bgImg from "../../assets/reservation/wood-grain-pattern-gray1x.png";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -28,11 +28,9 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 Swal.fire({
                     icon: 'success',
                     title: 'Login Successfully 🙂',
@@ -70,30 +68,34 @@ const Login = () => {
     };
 
 
+
+    
     return (
-        <div>
+        <div style={{ "backgroundImage": `url(${bgImg})`, "backgroundSize": 'cover', "minHeight": '100vh' }}>
             <HelmetTitle
                 title={"Login"}
             ></HelmetTitle>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row-reverse"
+                style={{ "boxShadow": "10px 10px 10px 10px rgba(0, 0, 0, 0.25)" }}
+                >
                     <div className="text-center lg:text-left text-black">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl py-10">
+                    <div className="card flex-shrink-0 w-full max-w-sm py-10">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input onBlur={() => setUserEmail(event.target.value)} name="email" type="email" placeholder="email" className="input input-bordered" required />
+                                <input onBlur={() => setUserEmail(event.target.value)} name="email" type="email" placeholder="email" className="input input-bordered bg-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name="password" type="password" placeholder="**********" className="input input-bordered" required />
+                                <input name="password" type="password" placeholder="**********" className="input input-bordered bg-white" required />
                                 <label className="label">
                                     <Link to="">
                                         <p onClick={handleResetPass} className="label-text-alt link link-hover">Forgot password?</p>
@@ -104,12 +106,12 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input onBlur={handleCaptcha} ref={captchaRef} type="text" placeholder="Type Here" className="input input-bordered" required />
+                                <input onBlur={handleCaptcha} ref={captchaRef} type="text" placeholder="Type Here" className="input input-bordered bg-white" required />
                                 {disable && <><p className="text-red-600">{captchaMessage}</p></>}
                             </div>
                             <p className="text-red-600">{errorMessage}</p>
                             <div className="form-control mt-6">
-                                <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
+                                <input disabled={disable} className="btn bg-[#D1A054] border-none text-white" type="submit" value="Login" />
                             </div>
                         </form>
                         <h3 className="text-xl text-[#D1A054] text-center">New here? <Link className="font-bold" to="/singUp">Create a New Account</Link></h3>

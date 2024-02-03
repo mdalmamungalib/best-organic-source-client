@@ -31,8 +31,6 @@ const ManageReview = () => {
         />
     }
 
-    console.log("manage Review", reviews);
-
     const handleDelete = review => {
         Swal.fire({
             title: 'Are you sure?',

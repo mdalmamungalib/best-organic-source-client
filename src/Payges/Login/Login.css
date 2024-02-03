@@ -1,0 +1,30 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Set background image */
+    background-image: url('path/to/your/image.jpg');
+    /* Ensure the background image covers the whole page */
+    background-size: cover;
+    /* Center the background image */
+    background-position: center;
+    /* Optional: Add a background color in case the image doesn't load */
+    background-color: #f5f5f5;
+  }
+  
+  .background {
+    height: 100vh;
+    /* You can add other styles for the background container if needed */
+  }
+  
+  .login-container {
+    /* Style your login container as needed */
+    /* For example: */
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -16,7 +16,6 @@ const OurShop = () => {
     const [tabIndex, setTabIndex] = useState(initialIndex);
 
     const [menu, isLoading] = useMenu();
-    console.log("menu", menu)
     if(isLoading){
         return <FadeLoader
         className='grid mx-auto'
@@ -29,8 +28,6 @@ const OurShop = () => {
     const soup = menu.filter(item => item?.category === "SOUPS");
     const desserts = menu.filter(item => item?.category === "DESSERTS");
     const drinks = menu.filter(item => item?.category === "DRINKS");
-
-    console.log("desserts", desserts);
 
     return (
         <div>
